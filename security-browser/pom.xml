@@ -4,21 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>security-browser</artifactId>
 
     <parent>
         <artifactId>security</artifactId>
         <groupId>com.xhj</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../security</relativePath>
     </parent>
 
-    <artifactId>security-borowser</artifactId>
-    <packaging>jar</packaging>
 
    <dependencies>
+       <!--引用security-core模块-->
        <dependency>
            <groupId>com.xhj</groupId>
            <artifactId>security-core</artifactId>
-           <version>0.0.1-SNAPSHOT</version>
-       </dependency></dependencies>
+           <version>${security.version}</version>
+       </dependency>
+        <!--spring session-->
+       <dependency>
+           <groupId>org.springframework.session</groupId>
+           <artifactId>spring-session</artifactId>
+       </dependency>
+
+   </dependencies>
 
 </project>

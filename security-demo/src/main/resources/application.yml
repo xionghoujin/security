@@ -6,3 +6,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 980720
+  session:
+      store-type: none
+
+security:
+  basic:
+    enabled: true

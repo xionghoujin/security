@@ -2,19 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-
-	<name>security-core</name>
-	<description>Demo project for Spring Boot</description>
-
+	<!--<groupId>com.xhj</groupId>-->
 	<artifactId>security-core</artifactId>
-	<packaging>jar</packaging>
+	<!--<version>0.0.1-SNAPSHOT</version>-->
+
+	<!--<name>security-core</name>-->
+	<!--<description>Demo project for Spring Boot</description>-->
+
+
+	<!--<packaging>jar</packaging>-->
 
 	<parent>
 		<groupId>com.xhj</groupId>
 		<artifactId>security</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath>../../security</relativePath>
 	</parent>
 
 	<dependencies>
@@ -40,6 +42,46 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
+		<!--第三方网站（社交网站）授权的依赖-->
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-config</artifactId>
+			<version>1.1.4.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-security</artifactId>
+			<version>1.1.4.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-web</artifactId>
+			<version>1.1.4.RELEASE</version>
+		</dependency>
+
+		<!--开发工具-->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
 	</dependencies>
 
 

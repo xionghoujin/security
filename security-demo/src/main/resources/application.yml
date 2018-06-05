@@ -12,3 +12,8 @@ spring:
 security:
   basic:
     enabled: true
+
+#xhj:
+#   security:
+#      browser:
+#        loginPage: /demo-signIn.html

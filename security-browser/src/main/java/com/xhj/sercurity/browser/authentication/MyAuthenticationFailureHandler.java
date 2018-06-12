@@ -3,6 +3,7 @@ package com.xhj.sercurity.browser.authentication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xhj.security.core.properties.LoginType;
 import com.xhj.security.core.properties.SecurityProperties;
+import com.xhj.sercurity.browser.support.SimpleResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public class MyAuthenticationFailureHandler extends SimpleUrlAuthenticationFailu
                 response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
                 response.setContentType("application/json;charset=UTF-8");
                 //将authentication转换成json格式的字符串，再写进response中
-                response.getWriter().write(objectMapper.writeValueAsString(e));
+                response.getWriter().write(objectMapper.writeValueAsString(new SimpleResponse(e.getMessage())));
         } else {
             //默认的（跳转）
             super.onAuthenticationFailure(request,response,e);

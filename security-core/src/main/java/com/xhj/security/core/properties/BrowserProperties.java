@@ -8,9 +8,13 @@ package com.xhj.security.core.properties;
 public class BrowserProperties {
 
     //设置默认值
+    //登陆的页面
     private String loginPage = "/login.html";
-
+    //返回的方式
     private LoginType loginType = LoginType.jSON;
+    //记住我的过期时间
+    private int rememberMeSecondes = 3600;
+
 
     public LoginType getLoginType() {
         return loginType;
@@ -28,5 +32,13 @@ public class BrowserProperties {
     public BrowserProperties setLoginPage(String loginPage) {
         this.loginPage = loginPage;
         return this;
+    }
+
+    public int getRememberMeSecondes() {
+        return rememberMeSecondes;
+    }
+
+    public void setRememberMeSecondes(int rememberMeSecondes) {
+        this.rememberMeSecondes = rememberMeSecondes;
     }
 }

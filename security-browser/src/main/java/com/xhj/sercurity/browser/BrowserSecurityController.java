@@ -1,6 +1,6 @@
 package com.xhj.sercurity.browser;
 
-import com.xhj.security.core.SecurityProperties;
+import com.xhj.security.core.properties.SecurityProperties;
 import com.xhj.sercurity.browser.support.SimpleResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -24,6 +24,7 @@ import java.io.IOException;
  * Created by 熊厚谨 on 2018/6/5 15:37
  *
  * @author 熊厚谨
+ * 自定义的security的登录页面控制器
  */
 @RestController
 public class BrowserSecurityController {

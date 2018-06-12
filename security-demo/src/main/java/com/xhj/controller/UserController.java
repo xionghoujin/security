@@ -7,6 +7,8 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -87,6 +89,12 @@ public class UserController {
     @DeleteMapping(value = "{id:\\d+}")
     public void delete(@PathVariable String id) {
         System.out.println(id);
+    }
+
+    @GetMapping(value = "/me")
+    public Object getCurrentUser(Authentication authentication) {
+        return authentication;
+//        return SecurityContextHolder.getContext().getAuthentication();
     }
 
 }

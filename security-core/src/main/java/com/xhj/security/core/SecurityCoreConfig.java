@@ -1,6 +1,6 @@
-package com.xhj.security.core.properties;
+package com.xhj.security.core;
 
-import com.xhj.security.core.SecurityProperties;
+import com.xhj.security.core.properties.SecurityProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,5 +12,5 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(SecurityProperties.class)
-public class securityCoreConfig {
+public class SecurityCoreConfig {
 }

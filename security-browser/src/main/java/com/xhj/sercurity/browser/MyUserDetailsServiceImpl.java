@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
  * Created by 熊厚谨 on 2018/6/4 22:49
  *
  * @author 熊厚谨
+ * 自定义的用户信息校验服务
  */
 @Component
 public class MyUserDetailsServiceImpl implements UserDetailsService {

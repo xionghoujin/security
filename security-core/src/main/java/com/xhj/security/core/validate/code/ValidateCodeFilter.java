@@ -1,6 +1,7 @@
 package com.xhj.security.core.validate.code;
 
 import com.xhj.security.core.properties.SecurityProperties;
+import com.xhj.security.core.validate.code.image.ImageCode;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +80,6 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
             }
         }
 
-
         if (action) {
 
             try {
@@ -99,7 +99,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
     private void Validate(ServletWebRequest request) throws ServletRequestBindingException {
 
         ImageCode codeInSession = (ImageCode) sessionStrategy.getAttribute(request,
-                ValidateCodeController.SESSION_KEY);
+                 ValidateCodeProcessor.SESSION_KEY_PREFIX+"IMAGE");
 
         String codeInRequest= ServletRequestUtils.getStringParameter(request.getRequest(), "imageCode");
 
@@ -112,7 +112,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
         }
 
         if (codeInSession.isExpried()) {
-            sessionStrategy.removeAttribute(request, ValidateCodeController.SESSION_KEY);
+            sessionStrategy.removeAttribute(request, ValidateCodeProcessor.SESSION_KEY_PREFIX+"IMAGE");
             throw new ValidateCodeException("验证码已过期");
         }
 
@@ -120,7 +120,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
             throw new ValidateCodeException("验证码不匹配");
         }
 
-        sessionStrategy.removeAttribute(request, ValidateCodeController.SESSION_KEY);
+        sessionStrategy.removeAttribute(request, ValidateCodeProcessor.SESSION_KEY_PREFIX+"IMAGE");
     }
 
     public AuthenticationFailureHandler getAuthenticationFailureHandler() {

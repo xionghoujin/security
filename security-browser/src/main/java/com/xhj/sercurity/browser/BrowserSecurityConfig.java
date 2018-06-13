@@ -84,7 +84,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 //表示这个路径是允许所有身份权限访问的 不需要下面的身份认证
                 .antMatchers("/authentication/require",
                         securityProperties.getBrowser().getLoginPage(),
-                        "/code/image"
+                        "/code/*"
                 ).permitAll()
                 .anyRequest()//表示任何请求
                 .authenticated()//都需要身份认证
